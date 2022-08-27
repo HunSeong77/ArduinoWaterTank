@@ -37,8 +37,6 @@ void joystick();
 void loop() {
   if(bt.available()){
     input();
-    for(int i = 0; i < 8; ++i)
-      Serial.print(receive[i]);
     button();
     joystick();
   }
@@ -61,7 +59,6 @@ void button(){
     } // X 버튼
   else if(receive[6] == 2){
     digitalWrite(pump, HIGH);
-    delay(2000);
     } // O 버튼
   else if(receive[6] == 3){
     } // 세모 버튼
